@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agent_profiles",
+  "info": {
+    "singularName": "agent-profile",
+    "pluralName": "agent-profiles",
+    "displayName": "Agent Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "website": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "bio": {
+      "type": "richtext",
+      "maxLength": 1000
+    },
+    "profile_picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "contact_details": {
+      "type": "json"
+    },
+    "working_hours": {
+      "type": "json"
+    },
+    "license_number": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

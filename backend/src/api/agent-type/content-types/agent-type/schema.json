@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agent_types",
+  "info": {
+    "singularName": "agent-type",
+    "pluralName": "agent-types",
+    "displayName": "Agent Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Solo",
+        "PartOfOrg"
+      ]
+    }
+  }
+}

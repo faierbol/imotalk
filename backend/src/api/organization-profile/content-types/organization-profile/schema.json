@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organization_profiles",
+  "info": {
+    "singularName": "organization-profile",
+    "pluralName": "organization-profiles",
+    "displayName": "Organization Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "org_name": {
+      "type": "string",
+      "maxLength": 100,
+      "unique": true
+    },
+    "website": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "description": {
+      "type": "richtext",
+      "maxLength": 1000
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "cover_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::organization-member.organization-member"
+    },
+    "working_hours": {
+      "type": "json"
+    },
+    "contact_details": {
+      "type": "json"
+    },
+    "license_number": {
+      "type": "string",
+      "maxLength": 50
+    }
+  }
+}
